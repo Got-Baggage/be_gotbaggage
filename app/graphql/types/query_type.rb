@@ -13,5 +13,12 @@ module Types
     def test_field
       "Hello World!"
     end
+
+     field :all_items, String, null: false,
+      description: "Shows all items"
+      def all_items
+        Item.all
+      end
+
   end
 end
