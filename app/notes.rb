@@ -35,3 +35,18 @@
 #     ]
 #   }
 # }
+
+# query {
+#   itemsByCategory(category: "essentials" )
+#   {
+#     name
+#     category
+#   }
+# },
+{
+#   itemsByCategory(category: "essentials" )
+#   {
+#     name
+#     category
+#   }
+# }

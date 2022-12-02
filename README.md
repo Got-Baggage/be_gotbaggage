@@ -1,6 +1,5 @@
 # Got Baggage?
 
-
 <h2> Table of Contents</h2>
 <details open="open">
 <summary>Table of Contents</summary>
@@ -38,6 +37,7 @@
 <h2 id="installation"> Installation </h2>
 
 To get started, clone the repo in your terminal by entering the following:
+
 <ul>
   <li>git clone git@github.com:Got-Baggage/be_gotbaggage.git</li>
 </ul>  
@@ -46,7 +46,9 @@ Once cloned, run the following commands:
 <ul>
   <li>bundle install</li>
   <li>rails db:create</li>
-  <li>rails db:migrate</li>
+  <li>rails db:migrate</li> 
+  <li>rake load:essential_items</li> 
+  <li>rake load:beach_items</li> 
   <li>Run the Figaro command: <em>bundle exec figaro install</em></li><br>
 
 Sign up for the following API keys and update the `application.yml` file with `ENV` variables to store the API keys: <br>
