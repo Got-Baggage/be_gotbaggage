@@ -39,7 +39,7 @@
 
 To get started, clone the repo in your terminal by entering the following:
 <ul>
-  <li>git clone git@github.com:nicole-esquer/lunch_and_learn.git</li>
+  <li>git clone git@github.com:Got-Baggage/be_gotbaggage.git</li>
 </ul>  
    
 Once cloned, run the following commands:
