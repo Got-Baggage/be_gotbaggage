@@ -1,0 +1,2 @@
+class ItemGroup < ApplicationRecord
+end
