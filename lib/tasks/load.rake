@@ -18,13 +18,13 @@ namespace :load do
     puts "beach items loaded successfully"
   end
 
-  # task all_items: :environment do
-  #   rake load:essential_items
-  #   rake load:beach_items
-  # end
+  desc "Load all from CSV"
+  task all_items: :environment do
+    Rake::Task["load:essential_items"].invoke
+    Rake::Task["load:beach_items"].invoke
+    puts "all items loaded successfully"
+  end
 end
-
-
 
 def csv_reader(csv_file)
   csv_text = File.read(csv_file)
