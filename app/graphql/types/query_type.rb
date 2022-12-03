@@ -43,13 +43,5 @@ module Types
         Item.where(category: "essentials")
       end
 
-      field :beach_items, [Types::ItemType], null: false,
-        description: "Shows beach items"
-
-      def beach_items
-        Item.where(category: "beach")
-      end
-
-
   end
 end
