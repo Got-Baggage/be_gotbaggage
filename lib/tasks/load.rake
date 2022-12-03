@@ -42,18 +42,30 @@ namespace :load do
     puts "roadtrip items loaded successfully"
   end
 
-  task snow_sport_items: :environment do
-    csv = csv_reader("lib/csvs/snow_sport_items.csv")
+    task snowsports_items: :environment do
+    csv = csv_reader("lib/csvs/snowsports_items.csv")
     csv.each do |row|
-      Item.create(name: row["name"], category: "snow sport")
+      Item.create(name: row["name"], category: "snowsports")
     end
-    puts "snow sport items loaded successfully"
+    puts "snowsports items loaded successfully"
+  end
+
+    task camping_items: :environment do
+    csv = csv_reader("lib/csvs/camping_items.csv")
+    csv.each do |row|
+      Item.create(name: row["name"], category: "camping")
+    end
+    puts "camping items loaded successfully"
   end
 
   desc "Load all from CSV"
   task all_items: :environment do
     Rake::Task["load:essential_items"].invoke
-    Rake::Task["load:beach_items"].invoke
+    Rake::Task["load:city_items"].invoke
+    Rake::Task["load:international_items"].invoke
+    Rake::Task["load:roadtrip_items"].invoke
+    Rake::Task["load:snowsports_items"].invoke
+    Rake::Task["load:camping_items"].invoke
     puts "all items loaded successfully"
   end
 end
