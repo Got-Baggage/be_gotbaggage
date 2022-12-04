@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2022_12_02_151104) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.bigint "trip_id"
     t.integer "category"
+    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["trip_id"], name: "index_items_on_trip_id"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_02_151104) do
   create_table "trips", force: :cascade do |t|
     t.string "name"
     t.integer "category"
-    t.integer "group_id"
+    t.string "image"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "location"
