@@ -1,5 +1,5 @@
 class Trip < ApplicationRecord
-  has_many :items
+  has_many :items, through: :trip_items
   validates_presence_of :name, :category
   enum category:[:essentials, :beach, :camping, :international, :city, :snowsports, :roadtrip]
 end
