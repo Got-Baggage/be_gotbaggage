@@ -4,16 +4,15 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
-
-     field :all_items, [Types::ItemType], null: false,
+      field :all_items, [Types::ItemType], null: false,
       description: "Shows all items"
+
       def all_items
          Item.all
       end
 
-     field :item, Types::ItemType, null: false do
+
+      field :item, Types::ItemType, null: false do
         argument :id, ID, required: true
       end
 
@@ -21,14 +20,16 @@ module Types
         Item.find(id)
       end
 
-     field :items_by_category, [Types::ItemType], null: false do
-        argument :category, String, required: true
+
+      field :items_by_category, [Types::ItemType], null: false do
+        argument :category, Integer, required: true
       end
 
       def items_by_category(category:)
         Item.where(category: category)
       end
 
+      
       field :essential_items, [Types::ItemType], null: false,
         description: "Shows essential items"
 

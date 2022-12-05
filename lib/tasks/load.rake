@@ -5,9 +5,9 @@ namespace :load do
     csv_text = File.read("lib/csvs/essential_items.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
+      # Item.create(name: row["name"], category: "essentials")
       Item.create(name: row["name"], category: "essentials")
     end
-    puts "essential items loaded successfully"
   end
 
   task beach_items: :environment do
@@ -15,7 +15,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "beach")
     end
-    puts "beach items loaded successfully"
   end
 
   task city_items: :environment do
@@ -23,7 +22,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "city")
     end
-    puts "city items loaded successfully"
   end
 
   task international_items: :environment do
@@ -31,7 +29,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "international")
     end
-    puts "international items loaded successfully"
   end
 
   task roadtrip_items: :environment do
@@ -39,7 +36,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "roadtrip")
     end
-    puts "roadtrip items loaded successfully"
   end
 
     task snowsports_items: :environment do
@@ -47,7 +43,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "snowsports")
     end
-    puts "snowsports items loaded successfully"
   end
 
     task camping_items: :environment do
@@ -55,7 +50,6 @@ namespace :load do
     csv.each do |row|
       Item.create(name: row["name"], category: "camping")
     end
-    puts "camping items loaded successfully"
   end
 
   desc "Load all from CSV"
