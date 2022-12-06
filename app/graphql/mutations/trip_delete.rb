@@ -11,7 +11,7 @@ module Mutations
     def resolve(id:)
       trip = ::Trip.find(id)
       raise GraphQL::ExecutionError.new "Error deleting trip", extensions: trip.errors.to_hash unless trip.destroy
-
+      trip.delete
       { trip: trip }
     end
   end
