@@ -1,13 +1,12 @@
 #query example, using items_by_category method (located in query_type.rb)
 
 # query {
-#   itemsByCategory(category: "essentials" )
+#   itemsByCategory(category: 1 )
 #   {
 #     name
 #     category
 #   }
 # }
-
 
 
 
@@ -36,17 +35,32 @@
 #   }
 # }
 
-# query {
-#   itemsByCategory(category: "essentials" )
+
+#Query
+#  query {
+#   essentialItems 
 #   {
 #     name
-#     category
-#   }
-# },
-{
-#   itemsByCategory(category: "essentials" )
+#   },
+# 	itemsByCategory(category: 1)
 #   {
 #     name
-#     category
 #   }
+# }
+
+#Delete trip item Mutation
+#  mutation {tripItemDelete(input: {tripId:1,itemId:1}){
+#   tripItem {
+#     id
+#   }
+# }
+# }
+
+#Delet trip mutation
+# mutation {tripDelete(input: {id:1})
+#   {
+#   trip{
+#     id
+#   	}
+# 	}
 # }
