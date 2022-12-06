@@ -4,21 +4,21 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-      field :all_items, [Types::ItemType], null: false,
-      description: "Shows all items"
+      # field :all_items, [Types::ItemType], null: false,
+      # description: "Shows all items"
 
-      def all_items
-         Item.all
-      end
+      # def all_items
+      #    Item.all
+      # end
 
 
-      field :item, Types::ItemType, null: false do
-        argument :id, ID, required: true
-      end
+      # field :item, Types::ItemType, null: false do
+      #   argument :id, ID, required: true
+      # end
 
-      def item(id:)
-        Item.find(id)
-      end
+      # def item(id:)
+      #   Item.find(id)
+      # end
 
 
       field :items_by_category, [Types::ItemType], null: false do
