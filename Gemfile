@@ -28,6 +28,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'graphql'
+gem 'graphiql-rails'
 # gem 'omniauth-google-oauth2'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -48,7 +49,6 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'graphiql-rails'
 end
 
 
