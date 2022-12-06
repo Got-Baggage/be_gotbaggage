@@ -72,4 +72,10 @@ Deleting an item from a trip list:
 ![mutation delete trip](https://user-images.githubusercontent.com/103013480/205972023-07248416-2bd2-40dc-a907-4685d63ab2b7.png)
 ![response delete trip ](https://user-images.githubusercontent.com/103013480/205972036-c6f10083-ef4f-486b-a4e8-eacc757637eb.png)
 
+Deleting a Trip
+
+![mutation delete trip](https://user-images.githubusercontent.com/103013480/205998126-49323926-1454-4ebc-a2b3-ee66a2f00862.png)
+![response delete trip](https://user-images.githubusercontent.com/103013480/205998196-9c537c6b-f3d5-4991-b4f9-b342cf5e4be6.png)
+
+
 <h2 id="contributors"> Contributors</h2>
