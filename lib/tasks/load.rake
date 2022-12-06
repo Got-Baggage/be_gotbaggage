@@ -55,6 +55,7 @@ namespace :load do
   desc "Load all from CSV"
   task all_items: :environment do
     Rake::Task["load:essential_items"].invoke
+    Rake::Task["load:beach_items"].invoke
     Rake::Task["load:city_items"].invoke
     Rake::Task["load:international_items"].invoke
     Rake::Task["load:roadtrip_items"].invoke
