@@ -9,6 +9,7 @@
     <li><a href="#installation"> Installation</a></li>
     <li><a href="#schema"> Schema</a></li>
     <li><a href="#endpoints"> API Endpoints</a></li>
+    <li><a href="#query"> GraphQL Query/Mutations</a></li>
     <li><a href="#contributors"> Contributors</a></li>
   </ol>
 </details>
@@ -58,5 +59,17 @@ Sign up for the following API keys and update the `application.yml` file with `E
 <img width="487" alt="Screenshot 2022-11-16 at 4 27 21 AM" src="https://user-images.githubusercontent.com/98506079/205390500-766a72f2-1e6e-4bc8-9a10-dcb28c9b1be8.png">
 
 <h2 id="endpoints"> Endpoints</h2>
+
+<h2 id="query"> Query/Mutation Example Responses</h2>
+Query list of items by category and essentials:
+  
+![query essentail item:category item](https://user-images.githubusercontent.com/103013480/205972654-009f90fe-a6fd-4e47-9e59-dcc14d7a0ca4.png)
+![reponse essential items and category](https://user-images.githubusercontent.com/103013480/205972693-a65f5b48-52d8-48e7-810e-589ed1801063.png)
+
+  
+Deleting an item from a trip list:
+  
+![mutation delete trip](https://user-images.githubusercontent.com/103013480/205972023-07248416-2bd2-40dc-a907-4685d63ab2b7.png)
+![response delete trip ](https://user-images.githubusercontent.com/103013480/205972036-c6f10083-ef4f-486b-a4e8-eacc757637eb.png)
 
 <h2 id="contributors"> Contributors</h2>
