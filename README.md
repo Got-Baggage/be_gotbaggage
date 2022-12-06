@@ -60,7 +60,7 @@ Sign up for the following API keys and update the `application.yml` file with `E
 
 <h2 id="endpoints"> Endpoints</h2>
 
-<h2 id="query"> Query/Mutations Examples Responses</h2>
+<h2 id="query"> Query/Mutation Example Responses</h2>
 Query list of items by category and essentials:
   
 ![query essentail item:category item](https://user-images.githubusercontent.com/103013480/205972654-009f90fe-a6fd-4e47-9e59-dcc14d7a0ca4.png)
