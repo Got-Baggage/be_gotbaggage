@@ -61,8 +61,6 @@ Sign up for the following API keys and update the `application.yml` file with `E
 <h2 id="endpoints"> Endpoints</h2>
 
 <h2 id="query"> Query/Mutations Examples Responses</h2>
-![query essentail item:category item](https://user-images.githubusercontent.com/103013480/205971992-870f59eb-0bcf-4b69-9ba6-d0810a230850.png)
-![reponse essential items and category](https://user-images.githubusercontent.com/103013480/205972007-b44a25a7-e427-4c17-9c74-85e1fb9eb2d0.png)
 
 ![mutation delete trip](https://user-images.githubusercontent.com/103013480/205972023-07248416-2bd2-40dc-a907-4685d63ab2b7.png)
 ![response delete trip ](https://user-images.githubusercontent.com/103013480/205972036-c6f10083-ef4f-486b-a4e8-eacc757637eb.png)
