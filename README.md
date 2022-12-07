@@ -77,5 +77,14 @@ Deleting a Trip
 ![mutation delete trip](https://user-images.githubusercontent.com/103013480/205998126-49323926-1454-4ebc-a2b3-ee66a2f00862.png)
 ![response delete trip](https://user-images.githubusercontent.com/103013480/205998196-9c537c6b-f3d5-4991-b4f9-b342cf5e4be6.png)
 
+Category Names
+
+query:
+
+```bash
+query {
+    categoryNames
+    }
+```
 
 <h2 id="contributors"> Contributors</h2>
