@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'TripDelete', type: :request do
   describe '.resolve' do
     before :each do
+      @trip = Trip.create!(name: "Disney Trip", category: "city", id: 1, traveler: "Mickey", image: "https://nothanks.com", location: "California")
       @query = <<~GQL
         mutation {tripDelete(input: {id:1})
           {
