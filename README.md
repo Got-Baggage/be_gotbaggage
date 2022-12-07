@@ -100,8 +100,40 @@ sample response
   }
 }
 ```
+All Trips:
+```javascript
+query
+  {
+    allTrips{
+      name
+      category
+    }
+  }
+```
+```javascript
+sample response
+  {
+  "data": {
+    "allTrips": [
+      {
+        "name": "Stevens Trip",
+        "category": "city"
+      },
+      {
+        "name": "Nicoles Disney Trip",
+        "category": "city"
+      },
+      {
+        "name": "Nikkys Cali Trip",
+        "category": "city"
+      }
+    ]
+  }
+}
+```
 
 Create Trip:
+
 ```javascript
 mutation	{
   tripCreate(input: {name: “Baggage Trip”, category: 3})
@@ -114,6 +146,7 @@ mutation	{
   }
 }
 ```
+
 ```javascript
 response
   {
@@ -131,6 +164,7 @@ response
 ```
 
 Create Item:
+
 ```javascript
 mutation{
   itemCreate(input: {tripId: 1, itemName: “boss item”})
@@ -141,6 +175,7 @@ mutation{
   }
 }
 ```
+
 ```javascript
 response
   {
@@ -158,11 +193,13 @@ response
 ```
 
 Category Names:
+
 ```javascript
 query {
     categoryNames
     }
 ```
+
 ```javascript
 response
 {
@@ -181,6 +218,7 @@ response
 ```
 
 Deleting an item from a trip list:
+
 ```javascript
 mutation{
   tripItemDelete(input: {tripId: 1,itemID: 33})
@@ -191,6 +229,7 @@ mutation{
   }
 }
 ```
+
 ```javascript
 response
   {
@@ -205,6 +244,7 @@ response
 ```
 
 Deleting a trip:
+
 ```javascript
 mutation {tripDelete(input: {id:1})
   {
@@ -214,6 +254,7 @@ mutation {tripDelete(input: {id:1})
 	}
 }
 ```
+
 ```javascript
 response
   {
@@ -226,6 +267,7 @@ response
     }
   }
 ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 Category Names

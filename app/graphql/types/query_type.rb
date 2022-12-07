@@ -21,9 +21,16 @@ module Types
 
       field :category_names, [String], null: false,
         description: "Returns all category names"
+        
+        def category_names
+          Trip.categories.keys
+        end
 
-      def category_names
-        Trip.categories.keys
+      field :all_trips, [Types::TripType], null: false,
+        description: "Returns all trip object"
+
+      def all_trips
+        Trip.all
       end
   end
 end
