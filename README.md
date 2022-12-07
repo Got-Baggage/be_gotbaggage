@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # Got Baggage?
 
 <h2> Table of Contents</h2>
@@ -19,6 +21,7 @@
 <li>Ruby 2.7.4</li>
 <li>Rails 5.2.8</li>
 </ul>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="gems-and-tools">Gems and Tools</h2>
 <ul>
@@ -34,6 +37,7 @@
   <li><a href="https://github.com/bblimke/webmock">Webmock</a></li>
   <li><a href="https://github.com/rspec/rspec-rails">RSpec</a></li>
 </ul>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="installation"> Installation </h2>
 
@@ -48,34 +52,197 @@ Once cloned, run the following commands:
   <li>bundle install</li>
   <li>rails db:create</li>
   <li>rails db:migrate</li> 
-  <li>rake load:essential_items</li> 
-  <li>rake load:beach_items</li> 
-  <li>Run the Figaro command: <em>bundle exec figaro install</em></li><br>
-
-Sign up for the following API keys and update the `application.yml` file with `ENV` variables to store the API keys: <br>
+  <li>rake load:all_items</li> 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="schema"> Schema</h2>
 
-<img width="487" alt="Screenshot 2022-11-16 at 4 27 21 AM" src="https://user-images.githubusercontent.com/98506079/205390500-766a72f2-1e6e-4bc8-9a10-dcb28c9b1be8.png">
+<img width="487" alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/206060083-ad1d9144-d470-406d-a1d2-f94920eaf4cc.png">
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="endpoints"> Endpoints</h2>
 
 <h2 id="query"> Query/Mutation Example Responses</h2>
-Query list of items by category and essentials:
   
-![query essentail item:category item](https://user-images.githubusercontent.com/103013480/205972654-009f90fe-a6fd-4e47-9e59-dcc14d7a0ca4.png)
-![reponse essential items and category](https://user-images.githubusercontent.com/103013480/205972693-a65f5b48-52d8-48e7-810e-589ed1801063.png)
+Essential items and Items by Category("beach"):
+```javascript
+query
+  {
+  essentialItems{
+    name
+  }
+  itemsByCategory(category: 1)
+  {
+      name
+    }
+  }
+```
+```javascript
+sample response
+  {
+  "data": {
+    "essentialItems": [
+      {
+        "name": "Shampoo"
+      },
+      {
+        "name": "Conditioner "
+      }
+    ],
+    "itemsByCategory": [
+      {
+        "name": "Beach umbrella"
+      },
+      {
+        "name": "Sunscreen "
+      }
+    ]
+  }
+}
+```
 
-  
+Create Trip:
+```javascript
+mutation	{
+  tripCreate(input: {name: “Baggage Trip”, category: 3})
+  {
+    trip {
+      name
+      category
+      image
+    }
+  }
+}
+```
+```javascript
+response
+  {
+    "data": {
+      "tripCreate": {
+        "trip": {
+          "name": "Baggage Trip",
+          "category": "international",
+          "traveler": "Stephen",
+          "image": "https://www.lonestar.edu/images/internationalTravel.jpg"
+        }
+      }
+    }
+  }
+```
+
+Create Item:
+```javascript
+mutation{
+  itemCreate(input: {tripId: 1, itemName: “boss item”})
+  {
+    item{
+      name
+    }
+  }
+}
+```
+```javascript
+response
+  {
+    "data": {
+      "tripCreate": {
+        "trip": {
+          "name": "Baggage Trip",
+          "category": "international",
+          "traveler": "Stephen",
+          "image": "https://www.lonestar.edu/images/internationalTravel.jpg"
+        }
+      }
+    }
+  }
+```
+
+Category Names:
+```javascript
+query {
+    categoryNames
+    }
+```
+```javascript
+response
+{
+  “data”: {
+    “categoryNames”: [
+      “essentials”,
+      “beach”,
+      “camping”,
+      “international”,
+      “city”,
+      “snowsports”,
+      “roadtrip”
+    ]
+  }
+}
+```
+
 Deleting an item from a trip list:
-  
-![mutation delete trip](https://user-images.githubusercontent.com/103013480/205972023-07248416-2bd2-40dc-a907-4685d63ab2b7.png)
-![response delete trip ](https://user-images.githubusercontent.com/103013480/205972036-c6f10083-ef4f-486b-a4e8-eacc757637eb.png)
+```javascript
+mutation{
+  tripItemDelete(input: {tripId: 1,itemID: 33})
+  {
+    tripItem{
+      id
+    }
+  }
+}
+```
+```javascript
+response
+  {
+    "tripItemDelete": {
+      "tripItemDelete": {
+        "tripItem": {
+          "id": "3"
+        }
+      }
+    }
+  }
+```
 
-Deleting a Trip
-
-![mutation delete trip](https://user-images.githubusercontent.com/103013480/205998126-49323926-1454-4ebc-a2b3-ee66a2f00862.png)
-![response delete trip](https://user-images.githubusercontent.com/103013480/205998196-9c537c6b-f3d5-4991-b4f9-b342cf5e4be6.png)
+Deleting a trip:
+```javascript
+mutation {tripDelete(input: {id:1})
+  {
+  trip{
+    id
+  	}
+	}
+}
+```
+```javascript
+response
+  {
+    "data": {
+      "tripDelete": {
+        "trip": {
+          "id": "1"
+        }
+      }
+    }
+  }
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <h2 id="contributors"> Contributors</h2>
+<h3>Nicole Esquer</h3>
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nicole-esquer)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicole-esquer)
+
+<h3>Nikky Rojas</h3>
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nikkyrojas/)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nikkyrojas/)
+
+<h3>Stephen Fabian</h3>
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stephenfabian)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stephen-fabian-5498658a/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
