@@ -228,6 +228,15 @@ response
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+Category Names
+
+query:
+
+```bash
+query {
+    categoryNames
+    }
+```
 
 <h2 id="contributors"> Contributors</h2>
 <h3>Nicole Esquer</h3>
