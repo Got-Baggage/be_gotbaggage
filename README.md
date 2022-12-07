@@ -57,7 +57,7 @@ Once cloned, run the following commands:
 
 <h2 id="schema"> Schema</h2>
 
-<img width="487" alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/206060083-ad1d9144-d470-406d-a1d2-f94920eaf4cc.png">
+<img width="487" alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/206069646-0541badd-2912-4771-87ec-dbcf999f958c.png">
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2 id="endpoints"> Endpoints</h2>
@@ -228,6 +228,15 @@ response
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+Category Names
+
+query:
+
+```bash
+query {
+    categoryNames
+    }
+```
 
 <h2 id="contributors"> Contributors</h2>
 <h3>Nicole Esquer</h3>
