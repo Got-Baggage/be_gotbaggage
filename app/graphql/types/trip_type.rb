@@ -5,6 +5,7 @@ module Types
     field :id, ID, null: false
     field :name, String
     field :category, String
+    field :traveler, String
     field :trip_items, [Types::ItemType]
     field :image, String
     field :group_id, Integer
