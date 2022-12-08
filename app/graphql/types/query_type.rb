@@ -32,5 +32,15 @@ module Types
       def all_trips
         Trip.all
       end
+
+      field :items_by_trip, [Types::ItemType], null: false do
+        argument :trip_id, Integer, required: true
+      end
+
+
+      def items_by_trip(trip_id:)
+        trip = Trip.find_by(id: trip_id)
+        trip.items
+      end
   end
 end

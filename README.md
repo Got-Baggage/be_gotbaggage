@@ -137,6 +137,37 @@ sample response
   }
 }
 ```
+Items by Trip ID:
+```javascript
+query
+  {
+    itemsByTrip(tripId:1){
+      name
+      id
+    }
+  }
+```
+```javascript
+sample response
+  {
+  "data": {
+    "itemsByTrip": [
+      {
+        "name": "Shampoo",
+        "category": "1"
+      },
+      {
+        "name": "Soap",
+        "id": "2"
+      },
+      {
+        "name": "Conditioner",
+        "category": "3"
+      }
+    ]
+  }
+}
+```
 
 Create Trip:
 
