@@ -4,13 +4,14 @@ module Mutations
     description "Creates a new trip"
     
     argument :name, String, required: true
-    argument :category, Integer, required: true
-
+    argument :category, String, required: true
+    argument :traveler, String, required: true
+    
     field :trip, Types::TripType, null: false
 
-    def resolve(name:, category:)
+    def resolve(name:, category:, traveler:)
       # trip = ::Trip.new(name: name, category: category)
-      trip = Trip.new(name: name, category: category, image: image_selector(category))
+      trip = Trip.new(name: name, category: category, traveler: traveler, image: image_selector(category))
       raise GraphQL::ExecutionError.new "Error creating trip", extensions: trip.errors.to_hash unless trip.save
       { trip: trip }
     end
