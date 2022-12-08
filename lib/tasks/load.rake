@@ -5,7 +5,6 @@ namespace :load do
     csv_text = File.read("db/data/essential_items.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-      # Item.create(name: row["name"], category: "essentials")
       Item.create(name: row["name"], category: "essentials")
     end
   end

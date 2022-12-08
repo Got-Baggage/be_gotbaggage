@@ -6,7 +6,7 @@ RSpec.describe 'TripCreate', type: :request do
       @query = <<~GQL
         mutation  {
           tripCreate(input: {
-            name: “Baggage Trip”,
+            name: "Baggage Trip",
             category: "beach",
             traveler: "Trip"
             }
@@ -22,7 +22,7 @@ RSpec.describe 'TripCreate', type: :request do
       GQL
     end
 
-    xit 'creates an Event' do
+    it 'creates an Event' do
       post '/graphql', params: { query: @query }
       json = JSON.parse(response.body)
       expect(Trip.count).to eq(1)
