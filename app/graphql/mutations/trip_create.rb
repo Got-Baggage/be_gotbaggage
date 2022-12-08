@@ -11,7 +11,6 @@ module Mutations
 
     def resolve(name:, category:, traveler:)
       trip = Trip.new(name: name, category: category, traveler: traveler, image: image_selector(category))
-      require 'pry'; binding.pry
       raise GraphQL::ExecutionError.new "Error creating trip", extensions: trip.errors.to_hash unless trip.save
       { trip: trip }
     end
