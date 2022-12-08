@@ -11,6 +11,7 @@ module Mutations
 
     def resolve(id:, name:)
       item = ::Item.find(id)
+      # binding.pry
       item.update(name: name)
       raise GraphQL::ExecutionError.new "Error updating item", extensions: item.errors.to_hash unless item.update(name: name)
       { item: item }

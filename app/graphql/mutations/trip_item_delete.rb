@@ -10,7 +10,6 @@ module Mutations
     def resolve(trip_id:, item_id:)
       trip_items = TripItem.where('trip_id = ?', trip_id)
       item = trip_items.where('item_id = ?', item_id).first
-      # binding.pry
       item.delete
       { trip_item: item }
     end
