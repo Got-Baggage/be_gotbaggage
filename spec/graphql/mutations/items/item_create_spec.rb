@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'ItemCreate', type: :request do
   describe '.resolve' do
     before :each do
-      @trip = Trip.create!(id: 1, name: 'Disney Trip', category: 'city', traveler: 'Mickey',
-                           image: 'https://imageofthecity.com')
+      # @trip = Trip.create!(id: 1, name: 'Disney Trip', category: 'city', traveler: 'Mickey',
+      #                      image: 'https://imageofthecity.com')
       @query = <<~GQL
         mutation{
           itemCreate(input: {tripId: 1, itemName: “boss item”})
@@ -15,20 +15,15 @@ RSpec.describe 'ItemCreate', type: :request do
           }
         }
       GQL
+
+      @result = BeGotbaggageSchema.execute(@query).as_json
     end
 
     xit 'creates an Item' do
-      expect(Item.count).to eq(0)
-      post '/graphql', params: { query: @query }
-      expect(Item.count).to eq(1)
-    end
-
-    xit 'returns an Item' do
-      post '/graphql', params: { query: @query }
-      json = JSON.parse(response.body)
-      data = json['data']['itemCreate']['item']
-
-      expect(data[0]['name']).to eq('boss item')
+      expect(@result['data']).to be_a(Hash)
+      expect(@result['data']['itemCreate']).to be_a(Hash)
+      expect(@result['data']['itemCreate']['item']).to be_a(Hash)
+      expect(@result['data']['itemCreate']['user']['itemName']).to eq('boss item')
     end
   end
 end
