@@ -1,5 +1,6 @@
 require 'simplecov'
 SimpleCov.start 'rails'
+SimpleCov.add_filter %w[config channels jobs mailers graphql/types/base_enum graphql/types/base_interface graphql/types/base_scalar graphql/types/base_union graphql/types/node_type graphql/types/user_type]
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
