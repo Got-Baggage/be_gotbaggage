@@ -41,5 +41,10 @@ module Types
       trip = Trip.find_by(id: trip_id)
       trip.items
     end
+
+    def clear_trip
+      trip = Trip.find_by(id: trip_id)
+      trip.items
+    end
   end
 end

@@ -93,7 +93,7 @@ sample response
         "name": "Shampoo"
       },
       {
-        "name": "Conditioner "
+        "name": "Conditioner"
       }
     ],
     "itemsByCategory": [
