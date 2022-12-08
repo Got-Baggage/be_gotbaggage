@@ -6,6 +6,7 @@
 ![](https://camo.githubusercontent.com/510a057988cb5216f5d297ee202f6a08fa179798926cea28e95910f6b8ca5535/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61726b646f776e2d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6d61726b646f776e266c6f676f436f6c6f723d7768697465)
 [![](https://camo.githubusercontent.com/281c069a2703e948b536500b9fd808cb4fb2496b3b66741db4013a2c89e91986/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f737467726553514c2d3331363139323f7374796c653d666f722d7468652d6261646765266c6f676f3d706f737467726573716c266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/281c069a2703e948b536500b9fd808cb4fb2496b3b66741db4013a2c89e91986/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f737467726553514c2d3331363139323f7374796c653d666f722d7468652d6261646765266c6f676f3d706f737467726573716c266c6f676f436f6c6f723d7768697465)
 [![](https://user-images.githubusercontent.com/64919819/113648167-6965f280-9649-11eb-8794-0f1082ae8d1c.png)](https://user-images.githubusercontent.com/64919819/113648167-6965f280-9649-11eb-8794-0f1082ae8d1c.png)
+
 # Got Baggage?
 
 <h2> Table of Contents</h2>
@@ -173,7 +174,7 @@ Create Trip:
 
 ```javascript
 mutation	{
-  tripCreate(input: {name: “Baggage Trip”, category: 3})
+  tripCreate(input: {name: "Baggage Trip", category: 3})
   {
     trip {
       name
@@ -204,7 +205,7 @@ Create Item:
 
 ```javascript
 mutation{
-  itemCreate(input: {tripId: 1, itemName: “boss item”})
+  itemCreate(input: {tripId: 1, itemName: "boss item"})
   {
     item{
       name
@@ -229,6 +230,34 @@ response
   }
 ```
 
+Update Item:
+
+```javascript
+mutation{
+  itemUpdate(input: {id: 3, name: "mouth wash"})
+  {
+    item{
+      name
+      id
+    }
+  }
+}
+```
+
+```javascript
+response
+  {
+    "data": {
+      "tripUpdate": {
+        "item": {
+          "name": "mouth wash",
+          "id": "3"
+        }
+      }
+    }
+  }
+```
+
 Category Names:
 
 ```javascript
@@ -241,7 +270,7 @@ query {
 response
 {
   “data”: {
-    “categoryNames”: [
+    categoryNames”: [
       “essentials”,
       “beach”,
       “camping”,
