@@ -4,20 +4,20 @@ RSpec.describe Types::QueryType do
   describe 'all_trips' do
     before :each do
       @trip1 = Trip.create!(id: 1, name: 'Disney Trip', category: 'city', traveler: 'Mickey',
-                           image: 'https://nothanks.com', location: 'California')
+                            image: 'https://nothanks.com', location: 'California')
       @trip2 = Trip.create!(id: 2, name: 'Beach Trip', category: 'beach', traveler: 'Minnie',
-                           image: 'https://yesplease.com', location: 'California')
+                            image: 'https://yesplease.com', location: 'California')
       @trip3 = Trip.create!(id: 3, name: 'The Bean', category: 'city', traveler: 'Mickey',
-                           image: 'https://illpass.com', location: 'Chicago')
+                            image: 'https://illpass.com', location: 'Chicago')
       @query = <<~GQL
-                query
-                  {
-                    allTrips{
-                      name
-                      category
-                    }
-                  }
-              GQL
+        query
+          {
+            allTrips{
+              name
+              category
+            }
+          }
+      GQL
     end
 
     it 'returns all trips' do
