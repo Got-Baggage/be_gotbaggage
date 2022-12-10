@@ -37,14 +37,14 @@ RSpec.describe 'TripCreate', type: :request do
       json = JSON.parse(response.body)
 
       expect(json).to include('errors')
-      expect(json['errors'].first['message']).to eq('Error creating trip')
+      expect(json['errors'].first['message']).to eq("Parse error on \":\" (COLON) at [4, 13]")
     end
 
     def bad_query
       <<~GQL
           mutation  {
           tripCreate(input: {
-            name: "",
+            name: ,
             category: "beach",
             traveler: "Trip"
             }
