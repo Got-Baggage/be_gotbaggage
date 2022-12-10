@@ -247,11 +247,12 @@ Create Item:
 
 ```javascript
 mutation{
-  itemCreate(input: {tripId: 1, itemName: "boss item"})
+  itemCreate(input: {tripId: 1, itemName: "Medicine"})
   {
     item{
       name
       id
+      category
     }
   }
 }
@@ -261,12 +262,11 @@ mutation{
 response
   {
     "data": {
-      "tripCreate": {
-        "trip": {
-          "name": "Baggage Trip",
-          "category": "international",
-          "traveler": "Stephen",
-          "image": "https://www.lonestar.edu/images/internationalTravel.jpg"
+      "itemCreate": {
+        "item": {
+          "name": "Medicine",
+          "category": "null",
+          "id": "145"
         }
       }
     }
