@@ -247,7 +247,7 @@ Create Item:
 
 ```javascript
 mutation{
-  itemCreate(input: {tripId: 1, itemName: "Medicine"})
+  itemCreate(input: {tripId: 1, itemName: "Medicine", category: null})
   {
     item{
       name
@@ -265,7 +265,7 @@ response
       "itemCreate": {
         "item": {
           "name": "Medicine",
-          "category": "null",
+          "category": null,
           "id": "145"
         }
       }
