@@ -10,10 +10,15 @@ module Mutations
     field :trip, Types::TripType, null: false
 
     def resolve(name:, category:, traveler:)
-      trip = Trip.new(name: name, category: category, traveler: traveler, image: image_selector(category))
+      trip = Trip.create!(name: name, category: category, traveler: traveler, image: image_selector(category))
+      trips_items = Item.where(category: category) + Item.where(category: 'essentials') 
+      trips_items.each do |item|
+        item.trip_items.create!(trip_id: trip.id, item_id: item.id)
+      end
       raise GraphQL::ExecutionError.new "Error creating trip", extensions: trip.errors.to_hash unless trip.save
       { trip: trip }
     end
+  
 
     def image_selector(category)
       return "https://www.sandals.com/blog/content/images/2020/03/Sandals-Barbados-Beach-Palm-Trees-Beach.jpg" if category == "beach"
