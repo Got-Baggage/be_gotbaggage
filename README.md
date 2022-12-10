@@ -70,7 +70,37 @@ Once cloned, run the following commands:
 <h2 id="endpoints"> Endpoints</h2>
 
 <h2 id="query"> Query/Mutation Example Responses</h2>
-  
+
+Clear all trips
+
+```javascript
+mutation;
+{
+  clearTrips;
+  {
+    id;
+  }
+}
+```
+
+````javascript
+sample response
+  {
+  "data": {
+    "clearTrips": [
+      {
+        "id": "27"
+      },
+      {
+        "id": "28"
+      },
+      {
+        "id": "29"
+      }
+    ]
+  }
+}
+
 Essential items and Items by Category("beach"):
 ```javascript
 query
@@ -83,7 +113,8 @@ query
       name
     }
   }
-```
+````
+
 ```javascript
 sample response
   {
@@ -107,7 +138,9 @@ sample response
   }
 }
 ```
+
 All Trips:
+
 ```javascript
 query
   {
@@ -117,6 +150,7 @@ query
     }
   }
 ```
+
 ```javascript
 sample response
   {
@@ -138,16 +172,20 @@ sample response
   }
 }
 ```
+
 Items by Trip ID:
+
 ```javascript
 query
   {
     itemsByTrip(tripId:1){
       name
       id
+      category
     }
   }
 ```
+
 ```javascript
 sample response
   {
@@ -155,15 +193,18 @@ sample response
     "itemsByTrip": [
       {
         "name": "Shampoo",
-        "category": "1"
+        "id": '1',
+        "category": "essentials"
       },
       {
         "name": "Soap",
-        "id": "2"
+        "id": "2",
+        "category": "essentials"
       },
       {
-        "name": "Conditioner",
-        "category": "3"
+        "name": "sunglasses",
+        "id": "3"
+        "category": "beach"
       }
     ]
   }
@@ -174,9 +215,10 @@ Create Trip:
 
 ```javascript
 mutation	{
-  tripCreate(input: {name: "Baggage Trip", category: 3})
+  tripCreate(input: {name: "Baggage Trip", category: "camping", traveler: "britney spears"})
   {
-    trip {
+    trip{
+      id
       name
       category
       image
@@ -209,6 +251,7 @@ mutation{
   {
     item{
       name
+      id
     }
   }
 }
@@ -287,7 +330,7 @@ Deleting an item from a trip list:
 
 ```javascript
 mutation{
-  tripItemDelete(input: {tripId: 1,itemID: 33})
+  tripItemDelete(input: {tripId: 1, itemID: 33})
   {
     tripItem{
       id

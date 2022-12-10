@@ -41,13 +41,5 @@ module Types
       trip = Trip.find_by(id: trip_id)
       trip.items
     end
-
-    # def clear_trips
-    #   Trip.destroy_all
-    #   # or
-    #   # trips = Trip.all
-    #   # trips.each do |trip|
-    #   # trip.delete
-    # end
   end
 end
