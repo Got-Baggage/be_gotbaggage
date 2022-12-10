@@ -7,7 +7,7 @@ RSpec.describe 'ItemCreate', type: :request do
                            image: 'https://imageofthecity.com')
       @query = <<~GQL
         mutation{
-          itemCreate(input: {tripId: 1, itemName: "boss item", category: 1})
+          itemCreate(input: {tripId: 1, itemName: "medicine", category: null})
           {
             item{
               name
@@ -23,7 +23,7 @@ RSpec.describe 'ItemCreate', type: :request do
       expect(@result['data']).to be_a(Hash)
       expect(@result['data']['itemCreate']).to be_a(Hash)
       expect(@result['data']['itemCreate']['item']).to be_a(Hash)
-      expect(@result['data']['itemCreate']['item']['name']).to eq('boss item')
+      expect(@result['data']['itemCreate']['item']['name']).to eq('medicine')
     end
 
     it 'will return error out if missing information' do

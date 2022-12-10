@@ -8,7 +8,7 @@ module Mutations
 
     argument :trip_id, Integer, required: true
     argument :item_name, String, required: true
-    argument :category, Integer, required: true
+    argument :category, String, required: false
     
     def resolve(trip_id:, item_name:, category:)
       trip = Trip.find(trip_id)
