@@ -8,11 +8,10 @@ module Mutations
 
     argument :trip_id, Integer, required: true
     argument :item_name, String, required: true
-    argument :category, String, required: false
     
-    def resolve(trip_id:, item_name:, category:)
+    def resolve(trip_id:, item_name:)
       trip = Trip.find(trip_id)
-      item = Item.create!(name: item_name, category: category)
+      item = Item.create!(name: item_name)
       item.trip_items.create!(trip_id: trip.id, item_id: item.id)
       raise GraphQL::ExecutionError.new "Error creating item", extensions: item.errors.to_hash unless item.save
       { item: item }
