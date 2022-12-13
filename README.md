@@ -33,16 +33,9 @@
 
 <h2 id="gems-and-tools">Gems and Tools</h2>
 <ul>
-  <li><a href="https://github.com/thoughtbot/factory_bot_rails">Factory Bot</a></li>
-  <li><a href="https://github.com/faker-ruby/faker">Faker</a></li>
-  <li><a href="https://github.com/lostisland/faraday">Faraday</a></li>
-  <li><a href="https://github.com/laserlemon/figaro">Figaro</a></li>
-  <li><a href="https://github.com/jsonapi-serializer/jsonapi-serializer#installation">JsonApi Serializer</a></li>
   <li><a href="https://www.postman.com/">Postman</a></li>
   <li><a href="https://github.com/pry/pry">Pry</a></li>
   <li><a href="https://github.com/simplecov-ruby/simplecov">SimpleCov</a></li>
-  <li><a href="https://relishapp.com/vcr/vcr/docs">VCR</a></li>
-  <li><a href="https://github.com/bblimke/webmock">Webmock</a></li>
   <li><a href="https://github.com/rspec/rspec-rails">RSpec</a></li>
 </ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

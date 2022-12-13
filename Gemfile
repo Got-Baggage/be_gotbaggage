@@ -24,9 +24,6 @@ gem 'puma', '~> 3.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'faraday'
-gem 'figaro'
-gem 'jsonapi-serializer'
 gem 'graphql'
 gem 'graphiql-rails'
 # gem 'omniauth-google-oauth2'
@@ -38,13 +35,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'vcr'
-  gem 'webmock'
 end
 
 group :development do
