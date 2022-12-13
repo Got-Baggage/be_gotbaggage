@@ -11,16 +11,7 @@ module Mutations
     def resolve(id:)
       trip = ::Trip.find(id)
       raise GraphQL::ExecutionError.new "Error deleting trip", extensions: trip.errors.to_hash unless trip.destroy
-
       { trip: trip }
     end
-
-    # def resolve
-    #   binding.pry
-    #   Trip.destroy_all
-    #   raise GraphQL::ExecutionError.new "Error deleting all trips", extensions: trip.errors.to_hash unless trip.destroy
-
-    #   { trip: trip }
-    # end
   end
 end
