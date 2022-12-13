@@ -108,7 +108,7 @@ query
   essentialItems{
     name
   }
-  itemsByCategory(category: 1)
+  itemsByCategory(category: "beach")
   {
       name
     }
@@ -247,7 +247,7 @@ Create Item:
 
 ```javascript
 mutation{
-  itemCreate(input: {tripId: 1, itemName: "Medicine", category: null})
+  itemCreate(input: {tripId: 1, itemName: "Medicine"})
   {
     item{
       name
