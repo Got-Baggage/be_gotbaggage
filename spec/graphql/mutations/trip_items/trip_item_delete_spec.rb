@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'TripItemDelete', type: :request do
   describe '.resolve' do
-      let (:trip) {Trip.create!(name: 'Disney Trip', category: 'city', id: 1, traveler: 'Mickey',
-                           image: 'https://nothanks.com', location: 'California')}
+    let (:trip) {Trip.create!(name: 'Disney Trip', category: 'city', id: 1, traveler: 'Mickey',
+                          image: 'https://nothanks.com', location: 'California')}
 
-      let(:item) {Item.create!(name: 'map', category: 'city', id: 33)}
+    let(:item) {Item.create!(name: 'map', category: 'city', id: 33)}
     
     it 'response has correct format' do
       trip_item = TripItem.create!(trip_id: trip.id, item_id: item.id)

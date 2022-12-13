@@ -9,6 +9,7 @@ module Mutations
 
     def resolve(trip_id:, item_ids:)
       trip = Trip.find(trip_id)
+      
       item_ids.each do |item_id|
         item = Item.find(item_id)
         trip.items << item
