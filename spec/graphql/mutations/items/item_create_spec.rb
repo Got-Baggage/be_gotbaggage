@@ -7,7 +7,7 @@ RSpec.describe 'ItemCreate', type: :request do
                            image: 'https://imageofthecity.com')
       @query = <<~GQL
         mutation{
-          itemCreate(input: {tripId: 1, itemName: "medicine", category: null})
+          itemCreate(input: {tripId: 1, itemName: "medicine"})
           {
             item{
               name
