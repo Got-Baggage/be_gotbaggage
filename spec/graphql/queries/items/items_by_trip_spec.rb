@@ -29,7 +29,6 @@ RSpec.describe Types::QueryType do
       expect(result['data']['itemsByTrip'][0]['name']).to eq('Shirt')
       expect(result['data']['itemsByTrip'][1]['name']).to eq('Socks')
       expect(result['data']['itemsByTrip'][1]['name']).to_not eq('Toothbrush')
-
       expect(result['data']['itemsByTrip'][0]).to have_key('name')
       expect(result['data']['itemsByTrip'][0]).to have_key('id')
     end
