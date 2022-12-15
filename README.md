@@ -34,22 +34,8 @@ Deployed Application: [Got Baggage](https://fe-gotbaggage.vercel.app/)
 
 <h2 id="gems">Gems</h2>
 <ul>
-<<<<<<< Updated upstream
-  <li><a href="https://github.com/thoughtbot/factory_bot_rails">Factory Bot</a></li>
-  <li><a href="https://github.com/faker-ruby/faker">Faker</a></li>
-  <li><a href="https://github.com/lostisland/faraday">Faraday</a></li>
-  <li><a href="https://github.com/laserlemon/figaro">Figaro</a></li>
-  <li><a href="https://github.com/jsonapi-serializer/jsonapi-serializer#installation">JsonApi Serializer</a></li>
-  <li><a href="https://www.postman.com/">Postman</a></li>
   <li><a href="https://github.com/pry/pry">Pry</a></li>
   <li><a href="https://github.com/simplecov-ruby/simplecov">SimpleCov</a></li>
-  <li><a href="https://relishapp.com/vcr/vcr/docs">VCR</a></li>
-  <li><a href="https://github.com/bblimke/webmock">Webmock</a></li>
-  <li><a href="https://github.com/rspec/rspec-rails">RSpec</a></li>
-=======
-  <li><a href="https://github.com/pry/pry">Pry</a></li>
-  <li><a href="https://github.com/simplecov-ruby/simplecov">SimpleCov</a></li>
->>>>>>> Stashed changes
 </ul>
 
 <h2 id="installation"> Installation </h2>
@@ -70,12 +56,8 @@ Sign up for the following API keys and update the `application.yml` file with `E
 
 <h2 id="schema"> Schema</h2>
 
-<<<<<<< Updated upstream
-<img width="487" alt="Screenshot 2022-11-16 at 4 27 21 AM" src="https://user-images.githubusercontent.com/98506079/205390500-766a72f2-1e6e-4bc8-9a10-dcb28c9b1be8.png">
-=======
 <img width="487" alt="Database Schema" src="https://user-images.githubusercontent.com/98506079/207923848-55fc1634-e8f2-4339-ab94-8eae7ad0f51f.png">
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
->>>>>>> Stashed changes
 
 <h2 id="endpoints"> Endpoints</h2>
 <details open="open">
@@ -94,9 +76,6 @@ Sign up for the following API keys and update the `application.yml` file with `E
   </ol>
 </details>
 
-<<<<<<< Updated upstream
-<h2 id="contributors"> Contributors</h2>
-=======
 <h4 id="clear-all-trips">Clear All Trips</h4>
 
 ```javascript
@@ -464,4 +443,3 @@ response
 [visual studio code-url]: https://code.visualstudio.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
->>>>>>> Stashed changes
