@@ -75,7 +75,7 @@ Once cloned, run the following commands:
   <ol>
     <li><a href="#clear-all-trips"> Clear All Trips</a></li>
     <li><a href="#essential-category-items">Essential items and Items by Category("beach")</a></li>
-    <li><a href="#all-trips">Al Trips</a></li>
+    <li><a href="#all-trips">All Trips</a></li>
     <li><a href="#items-by-trip-id">Items by Trip ID</a></li>
     <li><a href="#create-trip">Create Trip</a></li>
     <li><a href="#create-item">Create Item</a></li>
@@ -84,7 +84,7 @@ Once cloned, run the following commands:
     <li><a href="#delete-item">Deleting an item from a trip list</a></li>
     <li><a href="#delete-trip">Deleting a trip</a></li>
   </ol>
-</details><br>
+</details>
 
 <h4 id="clear-all-trips">Clear All Trips</h4>
 
@@ -98,7 +98,7 @@ mutation;
 }
 ```
 
-````javascript
+```javascript
 sample response
   {
   "data": {
@@ -115,8 +115,11 @@ sample response
     ]
   }
 }
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Essential items and Items by Category("beach"):
+<h4 id = "essential-category-items">Essential items and Items by Category("beach")</h4>
+
 ```javascript
 query
   {
@@ -128,7 +131,7 @@ query
       name
     }
   }
-````
+```
 
 ```javascript
 sample response
@@ -153,8 +156,9 @@ sample response
   }
 }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-All Trips:
+<h4 id = "all-trips">All Trips</h4>
 
 ```javascript
 query
@@ -187,8 +191,9 @@ sample response
   }
 }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Items by Trip ID:
+<h4 id = "items-by-trip-id">Items by Trip ID</h4>
 
 ```javascript
 query
@@ -225,11 +230,12 @@ sample response
   }
 }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Create Trip:
+<h4 id = "create-trip">Create Trip</h4>
 
 ```javascript
-mutation	{
+mutation  {
   tripCreate(input: {name: "Baggage Trip", category: "camping", traveler: "britney spears"})
   {
     trip{
@@ -257,8 +263,9 @@ response
     }
   }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Create Item:
+<h4 id = "create-item">Create Item</h4>
 
 ```javascript
 mutation{
@@ -287,8 +294,9 @@ response
     }
   }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Update Item:
+<h4 id = "update-item">Update Item</h4>
 
 ```javascript
 mutation{
@@ -315,8 +323,9 @@ response
     }
   }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Category Names:
+<h4 id = "category-names">Category Names</h4>
 
 ```javascript
 query {
@@ -340,8 +349,9 @@ response
   }
 }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Deleting an item from a trip list:
+<h4 id = "delete-item">Deleting an item from a trip list</h4>
 
 ```javascript
 mutation{
@@ -366,16 +376,17 @@ response
     }
   }
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Deleting a trip:
+<h4 id = "delete-trip">Deleting a trip</h4>
 
 ```javascript
 mutation {tripDelete(input: {id:1})
   {
   trip{
     id
-  	}
-	}
+    }
+  }
 }
 ```
 
@@ -391,18 +402,7 @@ response
     }
   }
 ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-Category Names
-
-query:
-
-```bash
-query {
-    categoryNames
-    }
-```
 
 <h2 id="contributors"> Contributors</h2>
 
