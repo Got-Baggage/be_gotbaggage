@@ -27,7 +27,6 @@ Deployed Application: [Got Baggage](https://fe-gotbaggage.vercel.app/)
     <li><a href="#installation"> Installation</a></li>
     <li><a href="#schema"> Schema</a></li>
     <li><a href="#endpoints"> API Endpoints</a></li>
-    <li><a href="#query"> GraphQL Query/Mutations</a></li>
     <li><a href="#contributors"> Contributors</a></li>
   </ol>
 </details>
