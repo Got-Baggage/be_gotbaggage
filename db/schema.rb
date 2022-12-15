@@ -10,24 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_02_032647) do
 
+ActiveRecord::Schema.define(version: 2022_12_12_185515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.bigint "trip_id"
-    t.string "category"
+    t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["trip_id"], name: "index_items_on_trip_id"
+  end
+
+  create_table "trip_items", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trip_items_on_item_id"
+    t.index ["trip_id"], name: "index_trip_items_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
     t.string "name"
-    t.string "category"
-    t.integer "group_id"
+    t.string "traveler"
+    t.integer "category"
+    t.string "image"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "location"
@@ -35,5 +43,12 @@ ActiveRecord::Schema.define(version: 2022_12_02_032647) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "items", "trips"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "trip_items", "items"
+  add_foreign_key "trip_items", "trips"
 end

@@ -1,5 +1,6 @@
 require 'simplecov'
 SimpleCov.start 'rails'
+SimpleCov.add_filter %w[config channels jobs mailer controllers graphql/types/base_enum graphql/types/base_interface graphql/types/base_scalar graphql/types/base_union graphql/types/node_type graphql/types/user_type]
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -63,15 +64,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-end
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  config.hook_into :webmock
-  config.configure_rspec_metadata!
-  # config.filter_sensitive_data('DONT SHOW MY APP ID') { ENV['edamam_app_id']}
-  config.allow_http_connections_when_no_cassette = true
-  config.default_cassette_options = { :record => :new_episodes }
-  # config.default_cassette_options = { re_record_interval: 4.day }
 end
 
 Shoulda::Matchers.configure do |config|

@@ -4,52 +4,42 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
-
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :items_by_category, [Types::ItemType], null: false do
+      argument :category, Integer, required: true
     end
 
-     field :all_items, [Types::ItemType], null: false,
-      description: "Shows all items"
-      def all_items
-         Item.all
-      end
+    def items_by_category(category:)
+      Item.where(category: category)
+    end
 
-     field :item, Types::ItemType, null: false do
-        argument :id, ID, required: true
-      end
+    field :essential_items, [Types::ItemType], null: false,
+      description: "Shows essential items"
 
-      def item(id:)
-        Item.find(id)
-      end
+    def essential_items
+      Item.where(category: "essentials")
+    end
 
-     field :items_by_category, [Types::ItemType], null: false do
-        argument :category, String, required: true
-      end
+    field :category_names, [String], null: false,
+      description: "Returns all category names"
+        
+    def category_names
+      Trip.categories.keys
+    end
 
-      def items_by_category(category:)
-        Item.where(category: category)
-      end
+    field :all_trips, [Types::TripType], null: false,
+      description: "Returns all trip object"
 
-      field :essential_items, [Types::ItemType], null: false,
-        description: "Shows essential items"
+    def all_trips
+      Trip.all
+    end
 
-      def essential_items
-        Item.where(category: "essentials")
-      end
+    field :items_by_trip, [Types::ItemType], null: false do
+      argument :trip_id, Integer, required: true
+    end
 
-      field :beach_items, [Types::ItemType], null: false,
-        description: "Shows beach items"
-
-      def beach_items
-        Item.where(category: "beach")
-      end
-
-
+    def items_by_trip(trip_id:)
+      trip = Trip.find_by(id: trip_id)
+      trip.items
+    end
   end
 end
